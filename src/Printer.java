@@ -2,15 +2,14 @@ public class Printer extends Machine {
 
     private PaperTray paperTray;
 
-    public Printer(){
-        this.paperTray = new PaperTray();// composition
+    public Printer(PaperTray paperTray){
+        //this.paperTray = new PaperTray();// composition
+        this.paperTray = paperTray;  // dependency injection - aggregation
         this.paperTray.load(3);
     }
 
 
     public void print(String text, int amount){
-
-
                 if(!isOn){
                     System.out.println("Turn printer on please");
                 } else {
